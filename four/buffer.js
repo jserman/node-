@@ -1,0 +1,23 @@
+const buf1 = new Buffer("hello");
+const buf2 = new Buffer(1024);
+const buf3 = new Buffer("hello world","utf-8");
+
+console.log(buf1[2]);
+console.log(buf2[100]);
+console.log(buf2[110]);
+buf2[2] = 2;
+console.log(buf2[2]);
+buf2[3] = 256;
+console.log(buf2[3]);
+buf2[4] = 100.7;
+console.log(buf2[4]);
+console.log(buf3.length);
+const buf4 = buf3.slice(1,4); 
+var buf5 = new Buffer(10);
+buf3[2] = 100;
+console.log(buf4.toString());
+console.log((buf3.copy(buf5)).toString());
+console.log(buf1.toString());
+console.log(buf1.toString("base64"));
+console.log(buf1.toString("ASCII"));
+console.log(buf1.toString("utf-8"));
